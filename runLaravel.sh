@@ -42,10 +42,10 @@ one(){
     echo "Installing npm dependencies... "
     cd ..
         pause
-    rm webpack.mix.js && rm composer.json && rm package.json
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../
+    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../ 
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -86,10 +86,10 @@ two(){
     echo "Installing npm dependencies... "
     cd $projectName
         pause
-    rm webpack.mix.js && rm composer.json && rm package.json
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../
+    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../ 
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -112,10 +112,10 @@ three(){
     echo "Config your project..."
         pause
     gedit .env
-    rm webpack.mix.js && rm composer.json && rm package.json
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../
+    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../ 
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -169,7 +169,8 @@ read_options(){
 	esac
 }
 
-read_me() {
+#Advertisement
+read_meNow() {
     clear
     echo "REMEMBER LEBOWSKY !!!!"
     echo "IF YOU RUN THIS FOR MULTISITE LARADOCK (ALREADY INSTALLED),"
@@ -187,7 +188,7 @@ trap '' SIGINT SIGQUIT SIGTSTP
 # ------------------------------------
 while true
 do
-    read_me
+    	read_meNow
 	show_menus
 	read_options
 done
