@@ -3,7 +3,7 @@
 ## ----------------------------------
 # Define variables
 # ----------------------------------
-EDITOR=gedit
+EDITOR=open -a textedit
 PASSWD=/etc/passwd
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
@@ -24,7 +24,7 @@ one(){
     cd $projectName
     echo "Config your project..."
         pause
-    gedit .env
+    open -a textedit .env
     echo "Adding laradock module... "
     git submodule add https://github.com/Laradock/laradock.git
     cd laradock
@@ -33,21 +33,21 @@ one(){
     pause
     cd nginx/sites/
     cp laravel.conf.example $projectName.conf
-    gedit $projectName.conf
+    open -a textedit $projectName.conf
     cd ../../
     echo "Add host... ('127.0.0.1    allegra.test')"
         pause
-    sudo gedit /etc/hosts
+    sudo open -a textedit /etc/hosts
     sleep 1 # Waits 1 seconds.
     echo "Installing npm dependencies... "
     cd ..
         pause
-    rm webpack.mix.js && rm composer.json && rm package.json && rm -R /resources/js
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R /js ../resources/ 
+    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/
     cd ..
-    rm -Rf LaravelConfig
+    rm -R LaravelConfig
     composer update
     npm i
     npm run dev
@@ -67,29 +67,29 @@ two(){
     cd $projectName
     echo "Config your project..."
         pause
-    gedit .env
+    open -a textedit .env
     echo "Adding laradock module... "
     git clone https://github.com/Laradock/laradock.git
-    cd laradock    
+    cd laradock
     cp env-example .env
     echo "Rename url's like:('allegra.test and www/allegra/public')"
     pause
     cd nginx/sites/
     cp laravel.conf.example $projectName.conf
-    gedit $projectName.conf
+    open -a textedit $projectName.conf
     cd ../../
     echo "Add host... ('127.0.0.1    allegra.test')"
         pause
-    sudo gedit /etc/hosts
+    sudo open -a textedit /etc/hosts
     cd ..
     sleep 1 # Waits 1 seconds.
     echo "Installing npm dependencies... "
     cd $projectName
         pause
-    rm webpack.mix.js && rm composer.json && rm package.json && rm -R /resources/js
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R /js ../resources/ 
+    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -99,7 +99,7 @@ two(){
     cd laradock
     docker-compose up -d mysql nginx phpmyadmin
     echo "That's all folks... "
-        pause   
+        pause
 }
 
 # do something in three()
@@ -111,11 +111,11 @@ three(){
     cd $projectName
     echo "Config your project..."
         pause
-    gedit .env
-    rm webpack.mix.js && rm composer.json && rm package.json && rm -R /resources/js
+    open -a textedit .env
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R /js ../resources/ 
+    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -130,15 +130,15 @@ three(){
         pause
     cd nginx/sites/
     cp laravel.conf.example $projectName.conf
-    gedit $projectName.conf
+    open -a textedit $projectName.conf
     cd ../../
     echo "Add host... ('127.0.0.1    allegra.test')"
         pause
-    sudo gedit /etc/hosts
+    sudo open -a textedit /etc/hosts
     docker-compose up -d mysql nginx phpmyadmin
     echo "That's all folks... "
         pause
-    
+
 }
 
 
@@ -192,3 +192,4 @@ do
 	show_menus
 	read_options
 done
+
