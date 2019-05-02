@@ -45,7 +45,7 @@ one(){
     rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../ 
+    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../resources/ 
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -89,7 +89,7 @@ two(){
     rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../ 
+    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../resources/ 
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -112,10 +112,10 @@ three(){
     echo "Config your project..."
         pause
     gedit .env
-    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -R /resources/js
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../ 
+    mv webpack.mix.js ../ && mv composer.json ../ && mv package.json ../ && mv -R js ../resources/ 
     cd ..
     rm -Rf LaravelConfig
     composer update
