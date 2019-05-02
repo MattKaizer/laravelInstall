@@ -37,7 +37,7 @@ one(){
     cd ../../
     echo "Add host... ('127.0.0.1    allegra.test')"
         pause
-    sudo open -a textedit /etc/hosts
+    sudo nano /etc/hosts
     sleep 1 # Waits 1 seconds.
     echo "Installing npm dependencies... "
     cd ..
@@ -80,7 +80,7 @@ two(){
     cd ../../
     echo "Add host... ('127.0.0.1    allegra.test')"
         pause
-    sudo open -a textedit /etc/hosts
+    sudo nano /etc/hosts
     cd ..
     sleep 1 # Waits 1 seconds.
     echo "Installing npm dependencies... "
@@ -134,7 +134,7 @@ three(){
     cd ../../
     echo "Add host... ('127.0.0.1    allegra.test')"
         pause
-    sudo open -a textedit /etc/hosts
+    sudo nano /etc/hosts
     docker-compose up -d mysql nginx phpmyadmin
     echo "That's all folks... "
         pause
@@ -192,4 +192,5 @@ do
 	show_menus
 	read_options
 done
+
 
