@@ -42,11 +42,10 @@ one(){
     echo "Installing npm dependencies... "
     cd ..
         pause
-    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/ && rm -Rf /resources/sass
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/
-    cd ..
+    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/ && cp -R sass ../resources/
     rm -R LaravelConfig
     composer update
     npm i
@@ -86,10 +85,10 @@ two(){
     echo "Installing npm dependencies... "
     cd $projectName
         pause
-    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/ && rm -Rf /resources/sass
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/
+    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/ && cp -R sass ../resources/
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -112,10 +111,10 @@ three(){
     echo "Config your project..."
         pause
     open -a textedit .env
-    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/
+    rm webpack.mix.js && rm composer.json && rm package.json && rm -Rf /resources/js/ && rm -Rf /resources/sass
     git clone https://github.com/MattKaizer/LaravelConfig.git
     cd LaravelConfig
-    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/
+    cp webpack.mix.js ../ && cp composer.json ../ && cp package.json ../ && cp -R js ../resources/ && cp -R images ../resources/ && cp -R sass ../resources/
     cd ..
     rm -Rf LaravelConfig
     composer update
@@ -192,5 +191,4 @@ do
 	show_menus
 	read_options
 done
-
 
